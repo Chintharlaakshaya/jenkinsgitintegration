@@ -11,16 +11,16 @@ pipeline {
 
         stage('Build') {
     steps {
-        dir('AutomateNop') {   // Change to your project folder
+       
             echo 'Building project...'
             bat 'mvn clean install'
-        }
+        
     }
 }
 
 stage('Test') {
     steps {
-        dir('AutomateNop') {
+      
             echo 'Running tests...'
             bat 'mvn test'
         }
@@ -50,4 +50,5 @@ stage('Test') {
         }
     }
 }
+
 
