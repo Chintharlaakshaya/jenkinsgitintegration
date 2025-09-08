@@ -49,8 +49,14 @@ public class HomePage {
 
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
@@ -71,7 +77,7 @@ public class HomePage {
     private By featuredProducts = By.cssSelector("div.product-item");
 
     // ===== News =====
-    private By newsLink = By.linkText("New online store is open!");
+    private By newsLink = By.cssSelector("a.news-title");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -91,7 +97,10 @@ public class HomePage {
     }
 
     public void goToWishlist() {
-        driver.findElement(wishlistLink).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(wishlistLink));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", link);
+        link.click();
     }
 
     public void goToNews() {

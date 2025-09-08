@@ -1,9 +1,15 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.*;
+
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class RegistrationSteps {
@@ -37,8 +43,11 @@ public class RegistrationSteps {
 
     @Then("I should see the registration success message and be logged in")
     public void i_should_see_the_registration_success_message_and_be_logged_in() {
-        String successMessage = driver.findElement(By.className("result")).getText();
-        Assert.assertTrue(successMessage.contains("completed"), "❌ Registration failed!");
+    	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	    WebElement successMsgElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("result")));
+    	    
+    	    String successMessage = successMsgElement.getText();
+    	    Assert.assertTrue(successMessage.contains("completed"), "❌ Registration failed!");
         driver.quit(); // close browser
     }
 }

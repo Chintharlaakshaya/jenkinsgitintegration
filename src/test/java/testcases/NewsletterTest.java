@@ -11,13 +11,13 @@ public class NewsletterTest extends BaseTest {
     public void verifyNewsletterSubscription() throws InterruptedException {
         // Step 1: Enter email
         WebElement emailBox = driver.findElement(By.id("newsletter-email"));
-        emailBox.sendKeys("testemail@example.com");
+        emailBox.sendKeys("testemail1@example.com");
 
         // Step 2: Click subscribe
         driver.findElement(By.id("newsletter-subscribe-button")).click();
 
         // Step 3: Wait for the result
-        Thread.sleep(2000); // simple wait, or use WebDriverWait if needed
+        Thread.sleep(3000); // simple wait, or use WebDriverWait if needed
 
         // Step 4: Get the result text
         WebElement resultMsg = driver.findElement(By.id("newsletter-result-block"));

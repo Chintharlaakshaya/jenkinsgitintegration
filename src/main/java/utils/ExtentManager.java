@@ -29,7 +29,7 @@ public class ExtentManager {
             extent.attachReporter(spark);
 
             // Adding system/environment info
-            extent.setSystemInfo("Tester", "Akshaya"); // <-- change name if needed
+            extent.setSystemInfo("Tester", "Akshaya"); 
             extent.setSystemInfo("Browser", ConfigReader.getProperty("browser") != null ? ConfigReader.getProperty("browser") : "chrome");
             extent.setSystemInfo("Base URL", ConfigReader.getProperty("url") != null ? ConfigReader.getProperty("url") : "https://demo.nopcommerce.com");
         }
