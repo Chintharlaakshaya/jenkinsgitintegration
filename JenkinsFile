@@ -24,7 +24,7 @@ stage('Test') {
             echo 'Running tests...'
             bat 'mvn test'
         }
-    }
+    
             post {
                 always {
                     // Publish TestNG results
@@ -50,5 +50,6 @@ stage('Test') {
         }
     }
 }
+
 
 
