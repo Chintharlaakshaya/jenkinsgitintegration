@@ -10,17 +10,21 @@ pipeline {
         }
 
         stage('Build') {
-            steps {
-                echo 'Building project...'
-                bat 'mvn clean install'
-            }
+    steps {
+        dir('AutomateNop') {   // Change to your project folder
+            echo 'Building project...'
+            bat 'mvn clean install'
         }
+    }
+}
 
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                bat 'mvn test'
-            }
+stage('Test') {
+    steps {
+        dir('AutomateNop') {
+            echo 'Running tests...'
+            bat 'mvn test'
+        }
+    }
             post {
                 always {
                     // Publish TestNG results
@@ -46,3 +50,4 @@ pipeline {
         }
     }
 }
+
