@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="17" passed="15" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-08T06:48:53 IST" name="NopCommerce Test Suite" finished-at="2025-09-08T06:49:45 IST" duration-ms="51321">
+    <groups>
+    </groups>
+    <test started-at="2025-09-08T06:48:53 IST" name="Functional Tests" finished-at="2025-09-08T06:49:45 IST" duration-ms="51321">
+      <class name="testcases.HomePageTest">
+        <test-method is-config="true" signature="suiteSetUp()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:48:48 IST" name="suiteSetUp" finished-at="2025-09-08T06:48:53 IST" duration-ms="4913" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetUp -->
+        <test-method signature="testMyAccountLinkVisible()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:48:53 IST" name="testMyAccountLinkVisible" finished-at="2025-09-08T06:48:53 IST" duration-ms="57" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMyAccountLinkVisible -->
+        <test-method signature="testSearchFunctionality()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:48:54 IST" name="testSearchFunctionality" finished-at="2025-09-08T06:48:55 IST" duration-ms="967" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchFunctionality -->
+        <test-method signature="verifyFeaturedProductsCount()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:48:55 IST" name="verifyFeaturedProductsCount" finished-at="2025-09-08T06:48:55 IST" duration-ms="17" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFeaturedProductsCount -->
+        <test-method signature="verifyHomePageTitle()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:48:55 IST" name="verifyHomePageTitle" finished-at="2025-09-08T06:48:55 IST" duration-ms="475" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePageTitle -->
+        <test-method signature="verifyNavigationToBooksCategory()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:48:56 IST" name="verifyNavigationToBooksCategory" finished-at="2025-09-08T06:48:56 IST" duration-ms="709" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToBooksCategory -->
+        <test-method signature="verifyNavigationToComputersCategory()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:48:57 IST" name="verifyNavigationToComputersCategory" finished-at="2025-09-08T06:48:57 IST" duration-ms="664" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToComputersCategory -->
+        <test-method signature="verifyNavigationToElectronicsCategory()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:48:57 IST" name="verifyNavigationToElectronicsCategory" finished-at="2025-09-08T06:48:58 IST" duration-ms="737" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToElectronicsCategory -->
+        <test-method signature="verifyNavigationToNews()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:48:58 IST" name="verifyNavigationToNews" finished-at="2025-09-08T06:49:08 IST" duration-ms="10064" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"link text","selector":"New online store is open!"}
+  (Session info: chrome=139.0.7258.155)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aad8722132d366537e1ec2e4b834565d, findElement {value=New online store is open!, using=link text}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\Akshaya\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51236}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51236/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aad8722132d366537e1ec2e4b834565d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"New online store is open!"}
+  (Session info: chrome=139.0.7258.155)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aad8722132d366537e1ec2e4b834565d, findElement {value=New online store is open!, using=link text}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\Akshaya\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51236}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51236/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aad8722132d366537e1ec2e4b834565d
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
+at pages.HomePage.goToNews(HomePage.java:98)
+at testcases.HomePageTest.verifyNavigationToNews(HomePageTest.java:121)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToNews -->
+        <test-method signature="verifyNavigationToWishlist()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:49:09 IST" name="verifyNavigationToWishlist" finished-at="2025-09-08T06:49:09 IST" duration-ms="556" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToWishlist -->
+        <test-method is-config="true" signature="suiteTearDown()[pri:0, instance:testcases.HomePageTest@4b3ed2f0]" started-at="2025-09-08T06:49:46 IST" name="suiteTearDown" finished-at="2025-09-08T06:49:46 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteTearDown -->
+      </class> <!-- testcases.HomePageTest -->
+      <class name="testcases.CartTest">
+        <test-method signature="addAppleMacBookToCartTest()[pri:0, instance:testcases.CartTest@691939c9]" started-at="2025-09-08T06:49:30 IST" name="addAppleMacBookToCartTest" finished-at="2025-09-08T06:49:34 IST" duration-ms="3822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addAppleMacBookToCartTest -->
+      </class> <!-- testcases.CartTest -->
+      <class name="testcases.RegisterTest">
+        <test-method signature="validRegistrationTest()[pri:0, instance:testcases.RegisterTest@149dd36b]" started-at="2025-09-08T06:49:12 IST" name="validRegistrationTest" finished-at="2025-09-08T06:49:15 IST" duration-ms="3007" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validRegistrationTest -->
+      </class> <!-- testcases.RegisterTest -->
+      <class name="testcases.CheckWishlistEmptyTest">
+        <test-method signature="verifyWishlistIsEmptyForFreshSession()[pri:0, instance:testcases.CheckWishlistEmptyTest@33fe57a9]" started-at="2025-09-08T06:49:24 IST" name="verifyWishlistIsEmptyForFreshSession" finished-at="2025-09-08T06:49:25 IST" duration-ms="912" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWishlistIsEmptyForFreshSession -->
+      </class> <!-- testcases.CheckWishlistEmptyTest -->
+      <class name="testcases.SearchProductTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.SearchProductTest@2c1156a7]" started-at="2025-09-08T06:49:17 IST" name="setUp" finished-at="2025-09-08T06:49:21 IST" duration-ms="4113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchProductTest()[pri:0, instance:testcases.SearchProductTest@2c1156a7]" started-at="2025-09-08T06:49:21 IST" name="searchProductTest" finished-at="2025-09-08T06:49:24 IST" duration-ms="2761" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProductTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.SearchProductTest@2c1156a7]" started-at="2025-09-08T06:49:24 IST" name="tearDown" finished-at="2025-09-08T06:49:24 IST" duration-ms="251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testcases.SearchProductTest -->
+      <class name="testcases.NewsletterTest">
+        <test-method signature="verifyNewsletterSubscription()[pri:0, instance:testcases.NewsletterTest@22d7b4f8]" started-at="2025-09-08T06:49:09 IST" name="verifyNewsletterSubscription" finished-at="2025-09-08T06:49:12 IST" duration-ms="2429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNewsletterSubscription -->
+      </class> <!-- testcases.NewsletterTest -->
+      <class name="testcases.CheckoutTotalTest">
+        <test-method signature="verifyCheckoutTotals()[pri:0, instance:testcases.CheckoutTotalTest@4f1bfe23]" started-at="2025-09-08T06:49:34 IST" name="verifyCheckoutTotals" finished-at="2025-09-08T06:49:44 IST" duration-ms="10084" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.cssSelector: table.cart tbody tr (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\Akshaya\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51236}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51236/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aad8722132d366537e1ec2e4b834565d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: table.cart tbody tr (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\Akshaya\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51236}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51236/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aad8722132d366537e1ec2e4b834565d
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at pages.CheckoutPage.waitForCart(CheckoutPage.java:31)
+at pages.CheckoutPage.validateRowCalculations(CheckoutPage.java:36)
+at testcases.CheckoutTotalTest.verifyCheckoutTotals(CheckoutTotalTest.java:14)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCheckoutTotals -->
+      </class> <!-- testcases.CheckoutTotalTest -->
+      <class name="testcases.LoginTest">
+        <test-method signature="validLoginTest()[pri:0, instance:testcases.LoginTest@38831718]" started-at="2025-09-08T06:49:15 IST" name="validLoginTest" finished-at="2025-09-08T06:49:17 IST" duration-ms="1865" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginTest -->
+      </class> <!-- testcases.LoginTest -->
+      <class name="testcases.WishListTesting">
+        <test-method signature="addSamsungGalaxyToWishlistTest()[pri:0, instance:testcases.WishListTesting@4982cc36]" started-at="2025-09-08T06:49:26 IST" name="addSamsungGalaxyToWishlistTest" finished-at="2025-09-08T06:49:30 IST" duration-ms="4375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addSamsungGalaxyToWishlistTest -->
+      </class> <!-- testcases.WishListTesting -->
+    </test> <!-- Functional Tests -->
+  </suite> <!-- NopCommerce Test Suite -->
+</testng-results>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+
+<suite name="NopCommerce Test Suite" parallel="false">
+
+<!-- Attach your listener -->
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
+
+    <!-- You can create groups later for smoke, regression etc. -->
+    <test name="Functional Tests">
+        <classes>
+            <class name="testcases.HomePageTest"/>
+            <class name="testcases.NewsletterTest"/>
+            <class name="testcases.RegisterTest"/>
+            <class name="testcases.LoginTest"/>
+            <class name="testcases.SearchProductTest"/>
+            <class name="testcases.CheckWishlistEmptyTest"/>
+            <class name="testcases.WishListTesting"/>
+           <!-- <class name="tests.RemoveFromWishlistTest"/>-->
+             <class name="testcases.CartTest"/>
+             <class name="testcases.CheckoutTotalTest"/>
+           <!--  <class name="testcases.TotalBillTest"/> -->
+        </classes>
+    </test>
+
+    <!-- Later you can add more modules like below -->
+    
+
+   <!--<test name="Search Tests">
+        <classes>
+            <class name="testcases.SearchTest"/>
+        </classes>
+    </test>
+    -->
+
+</suite>
