@@ -1,0 +1,60 @@
+pipeline {
+    agent any
+
+    environment {
+        // Optional environment variables
+        APP_ENV = 'dev'
+    }
+
+    tools {
+        jdk 'jdk17'        // The JDK configured in Jenkins
+        maven 'maven-3.9'  // The Maven configured in Jenkins
+    }
+
+    stages {
+        stage('Clone') {
+            steps {
+                // Pull your project from main branch
+                git branch: 'main', url: 'https://github.com/Chintharlaakshaya/jenkinsgitintegration.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                // Run Maven build
+                bat 'mvn clean install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Run Maven tests
+                bat 'mvn test'
+            }
+            post {
+                always {
+                    // Publish TestNG results in Jenkins
+                    junit '**/test-output/testng-results.xml'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying to ${env.APP_ENV} environment..."
+                // Optional deployment logic can go here
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully ✅'
+        }
+        failure {
+            echo 'Pipeline failed ❌'
+        }
+    }
+}
