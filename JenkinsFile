@@ -1,59 +1,78 @@
 pipeline {
+    // Defines where the pipeline will run. 'any' means any available agent.
     agent any
 
+    // Defines the tools required for the build. These must be configured in Jenkins.
     tools {
-        maven 'Maven3'   // make sure you configured Maven in Jenkins (Manage Jenkins > Global Tool Configuration)
-        jdk 'JDK17'      // configure JDK 17 in Jenkins and use the same name
+        maven 'Maven'
+        jdk 'JDK17'
     }
 
     stages {
-        stage('Checkout Code') {
+        // Stage 1: Checkout the code from the Git repository.
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Chintharlaakshaya/jenkinsgitintegration.git'
             }
         }
 
-        stage('Install Dependencies') {
+        // Stage 2: Build the project and run all tests.
+               stage('Build and Test') {
             steps {
-                sh "mvn clean install -DskipTests"
+                dir('AutomateNop') {
+                    echo 'Building and running tests with Maven...'
+                    // The 'install' goal runs the 'test' phase automatically.
+                    bat 'mvn clean install'
+                }
             }
         }
 
-        stage('Run Tests') {
+        // Stage 3: Publish the generated test reports.
+        // This stage will only execute if the previous stage (Build and Test) passes.
+        stage('Publish Reports') {
             steps {
-                sh "mvn clean test -DsuiteXmlFile=testng.xml"
-            }
-        }
+                dir('AutomateNop') {
+                    echo 'Publishing HTML reports...'
+                    // Publish TestNG HTML report
+                    publishHTML(target: [
+                        reportDir: 'test-output',
+                        reportFiles: 'emailable-report.html',
+                        reportName: 'TestNG Report'
+                    ])
 
-        stage('Publish TestNG Report') {
-            steps {
-                publishHTML(target: [
-                    allowMissing: true,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'test-output',
-                    reportFiles: 'index.html',
-                    reportName: 'TestNG HTML Report'
-                ])
-            }
-        }
+                    // Publish Cucumber report
+                    publishHTML(target: [
+                        reportDir: 'target/cucumber-reports',
+                        reportFiles: 'cucumber-report.html',
+                        reportName: 'Cucumber Report'
+                    ])
 
-        stage('Archive Extent Report & Screenshots') {
-            steps {
-                archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
+                    // Publish Extent Report
+                    publishHTML(target: [
+                        reportDir: 'reports/ExtentReports',
+                        reportFiles: 'ExtentReport_*.html',
+                        reportName: 'Extent Report'
+                    ])
+                }
             }
         }
     }
 
+    // Post-build actions that run regardless of the stage results.
     post {
+        // Always execute this block after the pipeline finishes.
         always {
-            junit 'target/surefire-reports/*.xml'
+            dir('AutomateNop') {
+		archiveArtifacts artifacts: 'reports/Screenshots/*.png', allowEmptyArchive: true
+		junit 'target/surefire-reports/*.xml'
+
+                
+            }
         }
-        success {
-            echo '✅ Build & Tests Successful!'
-        }
+        // This block runs if any stage fails.
         failure {
-            echo '❌ Build or Tests Failed. Check reports.'
+
+                      echo "Build or Tests Failed. Check Reports."
         }
     }
 }
