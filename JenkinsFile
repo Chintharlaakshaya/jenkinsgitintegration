@@ -1,55 +1,59 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Clone') {
-            steps {
-                echo 'Cloning repository...'
-                git 'https://github.com/Chintharlaakshaya/jenkinsgitintegration.git'
-            }
-        }
-
-        stage('Build') {
-    steps {
-       
-            echo 'Building project...'
-            bat 'mvn clean install'
-        
+    tools {
+        maven 'Maven3'   // make sure you configured Maven in Jenkins (Manage Jenkins > Global Tool Configuration)
+        jdk 'JDK17'      // configure JDK 17 in Jenkins and use the same name
     }
-}
 
-stage('Test') {
-    steps {
-      
-            echo 'Running tests...'
-            bat 'mvn test'
-        }
-    
-            post {
-                always {
-                    // Publish TestNG results
-                    junit '**/test-output/testng-results.xml'
-                }
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Chintharlaakshaya/jenkinsgitintegration.git'
             }
         }
 
-        stage('Deploy') {
+        stage('Install Dependencies') {
             steps {
-                echo 'Deploying project...'
-                // Add your deployment commands here if needed
+                sh "mvn clean install -DskipTests"
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh "mvn clean test -DsuiteXmlFile=testng.xml"
+            }
+        }
+
+        stage('Publish TestNG Report') {
+            steps {
+                publishHTML(target: [
+                    allowMissing: true,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'test-output',
+                    reportFiles: 'index.html',
+                    reportName: 'TestNG HTML Report'
+                ])
+            }
+        }
+
+        stage('Archive Extent Report & Screenshots') {
+            steps {
+                archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true
             }
         }
     }
 
     post {
+        always {
+            junit 'target/surefire-reports/*.xml'
+        }
         success {
-            echo 'Pipeline completed successfully ✅'
+            echo '✅ Build & Tests Successful!'
         }
         failure {
-            echo 'Pipeline failed ❌'
+            echo '❌ Build or Tests Failed. Check reports.'
         }
     }
 }
-
-
-
